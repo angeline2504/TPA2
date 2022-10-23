@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPA2 #3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <header>
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand">
+                <h1 class="fw-bold">"ANGLES" Movie</h1>
+            </a>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="What to watch ?" aria-label="Search" id="searchs">
+              
+                <button class="btn btn-outline-success" type="button" id="search-btn">Search</button>
+              </form>
+            </div>
+          </nav>
+    </header>
+    <div class="text-center d-none"  id="error-not-found">
+    <h1 style="text-align: center;">Movie not Found</h1>
+    <!--<img src="https://image.tmdb.org/t/p/w500/spCAxD99U1A6jsiePFoqdEcY0dG.jpg">-->
+    </div>
+    <div class="container px-4 ">
+        <div class="row gy-3 row-cols-1 row-cols-md-2 row-cols-lg-3 " id="list-movies">
+            <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/spCAxD99U1A6jsiePFoqdEcY0dG.jpg" class="card-img-top" alt="Fall">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Fall</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+            </div>
+          <div class="col">
+           <div class="p-3">
+            <div class="card" style="width: auto">
+                <img src="https://image.tmdb.org/t/p/w500/g8sclIV4gj1TZqUpnL82hKOTK3B.jpg" class="card-img-top" alt="Pinocchio">
+                <div class="card-body">
+                <div class="row">
+                  <h5 class="col-9 card-title">Pinocchio</h5>
+                  <p class="col-3 fs-5 fw-bold">7.4</p>
+                </div>
+                  <p class="card-text">Aug 8, 2022</p>
+                </div>
+              </div>
+           </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/iRV0IB5xQeOymuGGUBarTecQVAl.jpg" class="card-img-top" alt="Beast">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Beast</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/wSqAXL1EHVJ3MOnJzMhUngc8gFs.jpg" class="card-img-top" alt="Orphan">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Orphan: First Kill</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+           </div>
+           <div class="col">
+             <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/vwq5iboxYoaSpOmEQrhq9tHicq7.jpg" class="card-img-top" alt="Samaritan">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Samaritan</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+             </div>
+           </div>
+           <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/wE0I6efAW4cDDmZQWtwZMOW44EJ.jpg" class="card-img-top" alt="RRR">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">RRR</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+           </div>
+           <div class="col">
+             <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/yzkgx79vj1KsZBzxFBIsQBwBkPE.jpg" class="card-img-top" alt="Jujutsu Kaisen">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Jujutsu Kaisen 0</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+             </div>
+           </div>
+           <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg" class="card-img-top" alt="Thor LAT">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Thor Love And Thunder</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/rugyJdeoJm7cSJL1q4jBpTNbxyU.jpg" class="card-img-top" alt="Dragon Ball">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Dragon Ball Super: Super Hero</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/c5OwwBNyJkwyroIOIJL9IiRjydR.jpg" class="card-img-top" alt="Fullmetal Alchemist">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Fullmetal Alchemist: The Revenge of Scar</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/ujr5pztc1oitbe7ViMUOilFaJ7s.jpg" class="card-img-top" alt="Prey">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Prey</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/b9ykj4v8ykjRoGB7SpI1OuxblNU.jpg" class="card-img-top" alt="Wire Room">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Wire Room</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/iiclsw6zgRJz5D5Cc6sn4Cs9GQo.jpg" class="card-img-top" alt="Inerxorable">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Inerxorable</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg" class="card-img-top" alt="Top Gun M">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Top Gun Maverick</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/kAVRgw7GgK1CfYEJq8ME6EvRIgU.jpg" class="card-img-top" alt="Jurassi World D">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Jurassi World Dominion</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/ffX0TL3uKerLXACkuZGWhAPMbAq.jpg" class="card-img-top" alt="Seoul Vibe">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Seoul Vibe</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/r7XifzvtezNt31ypvsmb6Oqxw49.jpg" class="card-img-top" alt="Superpets">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Superpets</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/tLFIMuPWJHlTJ6TN8HCOiSD6SdA.jpg" class="card-img-top" alt="End Of The Road">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">End Of The Road</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg" class="card-img-top" alt="Minions: The Rise of Gru">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Minions: The Rise of Gru</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/qlrRi05x5hjoM29hz6TDLGTUSop.jpg" class="card-img-top" alt="Watch Out, We're Mad">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Watch Out, We're Mad</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/1HOYvwGFioUFL58UVvDRG6beEDm.jpg" class="card-img-top" alt="Luck">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Luck</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/bI7lGR5HuYlENlp11brKUAaPHuO.jpg" class="card-img-top" alt="Day Shift">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Day Shift</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/9Gtg2DzBhmYamXBS1hKAhiwbBKS.jpg" class="card-img-top" alt="Doctor Strange in the Multiverse of Madness">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Doctor Strange in the Multiverse of Madness</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/akIjKJDHcVN4bzifcEarKVPNpoa.jpg" class="card-img-top" alt="Do Revenge">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Do Revenge</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/ipn8khVVC4eToWiGf89WF9J5PJn.jpg" class="card-img-top" alt="Black Site">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Black Site</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/jRXYjXNq0Cs2TcJjLkki24MLp7u.jpg" class="card-img-top" alt="Avatar">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Avatar</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/etc6HKBEhNySNnYU2nRgbSeIyoW.jpg" class="card-img-top" alt="Hunting Ava Bravo">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Hunting Ava Bravo</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/kxB9E6fo0ycHzd13oOTHmGa5Njd.jpg" class="card-img-top" alt="Welcome to the Club">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Welcome to the Club</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/7quPRcCVUmMBxKO58QwPuIADtYG.jpg" class="card-img-top" alt="Curious Caterer: Dying for Chocolate">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Curious Caterer: Dying for Chocolate</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/jSL5TqroJsDAIgBdELBwby1uhf1.jpg" class="card-img-top" alt="Sniper: Rogue Mission">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Sniper: Rogue Mission</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/u6HUQcOQsgkFFO8xCITfxQz6ivc.jpg" class="card-img-top" alt="The Aviary">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">The Aviary</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/lr11mCT85T1JanlgjMuhs9nMht4.jpg" class="card-img-top" alt="The Black Phone">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">The Black Phone</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/uJYYizSuA9Y3DCs0qS4qWvHfZg4.jpg" class="card-img-top" alt="Spider-Man: No Way Home">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Spider-Man: No Way Home</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/AcKVlWaNVVVFQwro3nLXqPljcYA.jpg" class="card-img-top" alt="Nope">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Nope</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" class="card-img-top" alt="Sonic the Hedgehog 2">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Sonic the Hedgehog 2</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/dgDT3uol3mdvwEg0jt1ble3l9hw.jpg" class="card-img-top" alt="Presences">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Presences</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/8VjVLMiPm598Kg6XmKk5m1fz0p7.jpg" class="card-img-top" alt="Code Name: Emperor">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Code Name: Emperor</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/ox4goZd956BxqJH6iLwhWPL9ct4.jpg" class="card-img-top" alt="Lightyear">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Lightyear</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/8qb8cLDBAWdahrtixN2mQdI6e52.jpg" class="card-img-top" alt="Barbie: Mermaid Power">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Barbie: Mermaid Power</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/dHKfsdNcEPw7YIWFPIhqiuWrSAb.jpg" class="card-img-top" alt="The Ledge">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">The Ledge</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/2af0PqCfkxyAAq8QR2TeVJ1Ca2V.jpg" class="card-img-top" alt="Avatar: The Way of Water">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Avatar: The Way of Water</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/khcVwO0gwguC1CndbxtH1bzk4aj.jpg" class="card-img-top" alt="Office Invasion">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Office Invasion</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/fUdeneiMUQkE1Yb3Qx7dML0HVf.jpg" class="card-img-top" alt="No Limit">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">No Limit</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/xIbEHAqwK5N7PJJYmbwmxuvC7fL.jpg" class="card-img-top" alt="My Sweet Monster">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">My Sweet Monster</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/1ifiV9ZJD4tC3tRYcnLIzH0meaB.jpg" class="card-img-top" alt="Groot's First Steps">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Groot's First Steps</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/6FsGeIp7heHm5eh4tIxTzHIRxmt.jpg"" class="card-img-top" alt="The Next 365 Days">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">The Next 365 Days</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/zkGFADykBtfPfTv7YJooxTH52ph.jpg" class="card-img-top" alt="Dragon Knight">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Dragon Knight</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-3">
+                <div class="card" style="width: auto">
+                    <img src="https://image.tmdb.org/t/p/w500/sN7FJP06TsNNtK9Jr77dc25yI82.jpg" class="card-img-top" alt="Groot Takes a Bath">
+                    <div class="card-body">
+                    <div class="row">
+                      <h5 class="col-9 card-title">Groot Takes a Bath</h5>
+                      <p class="col-3 fs-5 fw-bold">7.4</p>
+                    </div>
+                      <p class="card-text">Aug 8, 2022</p>
+                    </div>
+                  </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="TPS2.js"></script>
+</body>
+</html>
+  
